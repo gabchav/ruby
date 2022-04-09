@@ -4,9 +4,8 @@ mayores = []
 loop do
   persona = {}
   puts "Ingrese nombre (Para terminar escriba S)"
-  persona[: nombre] = gets.chomp
-break
-    if persona[:nombre] == 's'||persona[:nombre] == 'S'
+  persona[:nombre] = gets.chomp
+break if persona[:nombre] == 's'||persona[:nombre] == 'S'
   puts "Ingrese edad"
    persona[:edad] = gets.chomp.to_i
    
