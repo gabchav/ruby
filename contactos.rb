@@ -2,8 +2,7 @@ menores=[]
 mayores=[]
 
 loop do 
-    persona=
-    {}
+    persona={}
 puts "Ingrese nombre (Para terminar escriba S)"
 nombre=gets.chomp
 break if nombre=='s'||nombre=='S'
