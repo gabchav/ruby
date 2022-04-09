@@ -1,27 +1,20 @@
-menores=[]
-mayores=[]
+menores = []
+mayores = []
 
-loop do 
-    persona={}
-puts "Ingrese nombre (Para terminar escriba S)"
-nombre=gets.chomp
-break if nombre=='s'||nombre=='S'
-
-puts "Ingrese edad"
-edad=gets.chomp
-
-persona[:nombre]=nombre
-persona[:edad]=edad
-
-if edad.to_i<18 
+loop do
+  persona = {}
+  puts "Ingrese nombre (Para terminar escriba S)"
+  persona[: nombre] = gets.chomp
+break
+    if persona[:nombre] == 's'||persona[:nombre] == 'S'
+  puts "Ingrese edad"
+   persona[:edad] = gets.chomp.to_i
+   
+  if persona[:edad] < 18
     menores << persona
-else
+  else
     mayores << persona
+  end
 end
 
-end
-
-puts "MENORES"
-p menores
-puts "MAYORES"
-p mayores
+puts "MENORES", menores, "MAYORES", mayores
