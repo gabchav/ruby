@@ -10,4 +10,4 @@ return a
 end
 
 
-puts acronimo("la palabra de ejemplo")
+puts acronimo("Chief Executive Officer")
