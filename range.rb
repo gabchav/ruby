@@ -1,16 +1,16 @@
 print "Imprimir Cuenta Regresiva de los Números Impares de un Rango\n\n"
 
-puts "Ingrese Primer Número"
-n1=gets.to_i
+puts 'Ingrese Primer Número'
+n1 = gets.to_i
 
-puts "Ingrese Segundo Número"
-n2=gets.to_i
+puts 'Ingrese Segundo Número'
+n2 = gets.to_i
+system('clear')
 
-range=(n1..n2).to_a
+men = n1 < n2 ? n1 : n2
+may = n1 > n2 ? n1 : n2
 
-range.reverse.each do |n|
-    if n%2==0
-    else
-        puts n
-    end
+puts "Rango Inverso de Impares desde el #{men} al #{may}"
+(men..may).to_a.reverse.each do |n|
+  puts n if n.odd?
 end
