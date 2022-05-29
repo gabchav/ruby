@@ -212,9 +212,9 @@ bundle
 	<%= paginate @tv_shows %>
 	
 # Para Traducir paginacion, editar archivo config/locales/en.yml
-views:
-    pagination: 
-      previous: "&lt;Anterior"
-      next: "Siguiente&gt;"
-      last: "&Uacute;ltimos"
-      first: "Primeros"
+	views:
+	    pagination: 
+	      previous: "&lt;Anterior"
+	      next: "Siguiente&gt;"
+	      last: "&Uacute;ltimos"
+	      first: "Primeros"
