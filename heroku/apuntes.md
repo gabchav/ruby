@@ -19,23 +19,28 @@ git status   #para verificar que no queden archivos por subir
 # Crear Proyecto
 
 ```bash 
-rails _6.1.5_ new my_favorite --database=postgresql
+rails _6.1.5_ new serie --database=postgresql
 ```
 
 # Ingresar a la Carpeta
 
 ```bash
 cd my_favorite
-sudo service postgresql start
-
 ```
 
-# Cambiar Puerto
+# Opcional: Iniciar postgresql
+```bash
+sudo service postgresql start
+```
+
+# Opcional: Cambiar Puerto
 Agregar siguiente linea al archivo config/database.yml
 ```bash
 port: 5433
 ```
-
+# Abrir code
+	code .
+	
 # Editar Archivo gemfile -> linea 9 
 actualizar gema
 ```bash
@@ -46,6 +51,7 @@ gem 'pg', '~> 1.3', '>= 1.3.5'
 ```bash
 rails db:create db:migrate
 rails g scaffold tv_show name:string summary:text release_date:datetime rating:float
+rails db:migrate
 ```
 # Iniciar Servidor en carpeta del Proyecto
 ```bash
@@ -205,7 +211,7 @@ bundle
 # Agregar helper de kaminari la paginación en app/views/tv_shows/index.html.erb
 	<%= paginate @tv_shows %>
 	
-# Para Traducir paginacion, editar archivo 
+# Para Traducir paginacion, editar archivo config/locales/en.yml
 views:
     pagination: 
       previous: "&lt;Anterior"
