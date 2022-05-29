@@ -231,3 +231,14 @@ rails server
 Ejecutar lo siguiente dentro del directorio del proyecto
 
 	yarn add bootstrap@4.3.0 jquery@3.4.1 popper.js@1.16.0
+	
+Crear archivo: app/javascript/css/site.scss
+
+	@import "~bootstrap/scss/bootstrap.scss";
+	
+Agregar lo siguiente al archivo: app/javascript/pack/application.js
+
+	import 'css/site'
+	import 'jquery'
+	import 'popper.js'
+	import 'bootstrap'
