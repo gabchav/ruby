@@ -236,9 +236,35 @@ Crear archivo: app/javascript/css/site.scss
 
 	@import "~bootstrap/scss/bootstrap.scss";
 	
-Agregar lo siguiente al archivo: app/javascript/pack/application.js
+Agregar lo siguiente al archivo: app/javascript/packs/application.js
 
 	import 'css/site'
 	import 'jquery'
 	import 'popper.js'
 	import 'bootstrap'
+
+# Crear pagina welcome: app/views/tv_shows/welcome.html.erb
+
+´´´
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4 text-success">My Favorite TV series</h1>
+            <p class="lead text-secondary">Welcome!!!</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="media">
+                <%= image_tag('iron-man.jpg', size: "64x64", alt: "Iron Man", class: 'mr-3')%>
+                <div class="media-body">
+                    <h5 class="mt-0">Iron Man</h5>
+                    2008's Iron Man tells the story of Tony Stark, a billionaire industrialist and genius inventor who is kidnapped and forced to build a devastating weapon. Instead, using his intelligence and ingenuity, Tony builds a high-tech suit of armor and escapes captivity.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+´´´
