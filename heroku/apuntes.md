@@ -199,8 +199,16 @@ bundle
 
 # Reemplazar en app/controllers/tv_shows_controller.rb
 	def index
-  		@tv_shows = TvShow.order(:name).page(params[:page])
+  		@tv_shows = TvShow.order(:name).page(params[:page]).per(15)
 	end
 	
 # Agregar helper de kaminari la paginación en app/views/tv_shows/index.html.erb
 	<%= paginate @tv_shows %>
+	
+# Para Traducir paginacion, editar archivo 
+views:
+    pagination: 
+      previous: "&lt;Anterior"
+      next: "Siguiente&gt;"
+      last: "&Uacute;ltimos"
+      first: "Primeros"
