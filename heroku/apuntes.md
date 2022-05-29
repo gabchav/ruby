@@ -229,4 +229,5 @@ rails server
 
 # Instalar Bootstrap
 Ejecutar lo siguiente dentro del directorio del proyecto
+
 	yarn add bootstrap@4.3.0 jquery@3.4.1 popper.js@1.16.0
