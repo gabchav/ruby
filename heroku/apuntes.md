@@ -148,6 +148,14 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 ```bash
 bundle
 ```
+
+
+# Detener y volver a iniciar el servidor
+```bash
+rails server
+```
+
+
 # Agregar lo siguiente al archivo db/seeds.rb
 
 	puts 'creando series de tv...'
