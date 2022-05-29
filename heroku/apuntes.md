@@ -192,3 +192,15 @@ bundle
 	end
 
 	puts 'finalizado!!!'
+
+# Ejecutar en consola
+	rails db:migrate
+	rails db:seed
+
+# Reemplazar en app/controllers/tv_shows_controller.rb
+	def index
+  		@tv_shows = TvShow.order(:name).page(params[:page])
+	end
+	
+# Agregar helper de kaminari la paginación en app/views/tv_shows/index.html.erb
+	<%= paginate @tv_shows %>
