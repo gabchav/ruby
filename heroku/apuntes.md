@@ -245,25 +245,55 @@ Agregar lo siguiente al archivo: app/javascript/packs/application.js
 
 # Crear pagina welcome: app/views/tv_shows/welcome.html.erb
 
-		<div class="container">
-		    <div class="row">
-			<div class="col-12">
-			    <h1 class="display-4 text-success">My Favorite TV series</h1>
-			    <p class="lead text-secondary">Welcome!!!</p>
-			</div>
-		    </div>
-		    <hr>
-		    <div class="row">
-			<div class="col-12">
-			    <div class="media">
-				<%= image_tag('iron-man.jpg', size: "64x64", alt: "Iron Man", class: 'mr-3')%>
-				<div class="media-body">
-				    <h5 class="mt-0">Iron Man</h5>
-				    2008's Iron Man tells the story of Tony Stark, a billionaire industrialist and genius inventor who is kidnapped and forced to build a devastating weapon. Instead, using his intelligence and ingenuity, Tony builds a high-tech suit of armor and escapes captivity.
-				</div>
-			    </div>
+	<div class="container">
+	    <div class="row">
+		<div class="col-12">
+		    <h1 class="display-4 text-success">My Favorite TV series</h1>
+		    <p class="lead text-secondary">Welcome!!!</p>
+		</div>
+	    </div>
+	    <hr>
+	    <div class="row">
+		<div class="col-12">
+		    <div class="media">
+			<%= image_tag('iron-man.jpg', size: "64x64", alt: "Iron Man", class: 'mr-3')%>
+			<div class="media-body">
+			    <h5 class="mt-0">Iron Man</h5>
+			    2008's Iron Man tells the story of Tony Stark, a billionaire industrialist and genius inventor who is kidnapped and forced to build a devastating weapon. Instead, using his intelligence and ingenuity, Tony builds a high-tech suit of armor and escapes captivity.
 			</div>
 		    </div>
 		</div>
+	    </div>
+	</div>
 
+# Agregar ruta en archivo: config/routes.rb
 
+	Rails.application.routes.draw do
+	  get '/tv_shows', to: 'tv_shows#index'
+	  get '/welcome', to: 'tv_shows#welcome'
+	  root 'tv_shows#welcome'
+	  resources :tv_shows do
+	    collection do
+	      get 'search'
+	    end
+	    member do
+	      get 'about'
+	    end
+	    end
+	  end
+
+# Agregar ruta de imágen
+Agregar columna: ruta_img en base de datos (con pg_admin)
+
+Agregar en app/views/tv_shows/_form.html.erb
+
+ 	<div class="field">
+	<%= form.label :'Ruta imágen' %>
+	<%= form.text_field :ruta_img %>
+	</div>
+	
+Agregar en app/controllers/tv_shows_controller.rb
+
+	    def tv_show_params
+	      params.require(:tv_show).permit(:name, :summary, :release_date, :rating, :ruta_img)
+	    end
